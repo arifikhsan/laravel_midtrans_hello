@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PaymentRequest;
+use Illuminate\Http\Request;
 use Midtrans\Config;
 use Midtrans\Snap;
 
@@ -96,6 +97,12 @@ class PaymentController extends Controller
         $snapToken = Snap::getSnapToken($transaction);
         // dd($snapToken);
         return view('payment', ['snapToken' => $snapToken]);
+    }
+
+    public function handle(Request $request)
+    {
+        dd($request);
+        return $request;
     }
 
     public function finish()

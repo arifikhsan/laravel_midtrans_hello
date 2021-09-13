@@ -18,5 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::post('/pay', [PaymentController::class, 'pay']);
+Route::post('/handle', [PaymentController::class, 'handle']);
 Route::get('/finish', [PaymentController::class, 'finish']);
 Route::get('/error', [PaymentController::class, 'error']);
