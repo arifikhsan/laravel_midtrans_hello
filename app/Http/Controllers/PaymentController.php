@@ -105,9 +105,10 @@ class PaymentController extends Controller
         return $request;
     }
 
-    public function finish()
+    public function finish(Request $request)
     {
-        return 'finish';
+        $body = $request->getContent();
+        return view('finish', ['id' => $request->query('id'), 'body' => $body,]);
     }
 
     public function error()

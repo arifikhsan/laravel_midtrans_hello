@@ -19,5 +19,5 @@ Route::get('/', function () {
 });
 Route::post('/pay', [PaymentController::class, 'pay']);
 Route::post('/handle', [PaymentController::class, 'handle']);
-Route::get('/finish', [PaymentController::class, 'finish']);
-Route::get('/error', [PaymentController::class, 'error']);
+Route::post('/finish/{id?}', [PaymentController::class, 'finish']);
+Route::post('/error', [PaymentController::class, 'error']);
